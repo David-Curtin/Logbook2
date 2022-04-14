@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lyit.csd.tests.unit.PortfolioManager_AddFundsUTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-14T13:31:31" hostname="fv-az502-297" time="0.017">
+<testsuite name="com.lyit.csd.tests.unit.PortfolioManager_AddFundsUTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-14T13:55:39" hostname="fv-az397-678" time="0.01">
   <properties/>
-  <testcase name="addFunds_ValidTransaction" classname="com.lyit.csd.tests.unit.PortfolioManager_AddFundsUTest" time="0.017"/>
+  <testcase name="addFunds_ValidTransaction" classname="com.lyit.csd.tests.unit.PortfolioManager_AddFundsUTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

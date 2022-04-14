@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.lyit.csd.tests.unit.PortfolioManager_SellAssetUTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-14T13:31:31" hostname="fv-az502-297" time="0.008">
+<testsuite name="com.lyit.csd.tests.unit.PortfolioManager_SellAssetUTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-14T13:55:39" hostname="fv-az397-678" time="0.003">
   <properties/>
-  <testcase name="sellAsset_singleUnit_happyPath" classname="com.lyit.csd.tests.unit.PortfolioManager_SellAssetUTest" time="0.008"/>
+  <testcase name="sellAsset_singleUnit_happyPath" classname="com.lyit.csd.tests.unit.PortfolioManager_SellAssetUTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
