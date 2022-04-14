@@ -31,4 +31,6 @@ jobs:
       
       - name: Deploy JavaDoc 🚀
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.0.4
+        with:
+          java-version: 17
 
