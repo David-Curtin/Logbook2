@@ -27,9 +27,6 @@
 .idea/**/gradle.xml
 .idea/**/libraries
 
-# Taking this file out of source gets rid of the invalid mapping configuration popup
-.idea/vcs.xml
-
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
@@ -78,9 +75,3 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
-
-# Ignore compile output
-target/
-
-# Ignore VsCode settings
-.vscode/
