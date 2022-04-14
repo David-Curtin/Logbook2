@@ -25,7 +25,11 @@ jobs:
 
       # Run our build using gradle
       - name: Build with Gradle
-        run: ./gradlew clean build
+        run: ./gradlew build
+
+      # Run Tests
+      - name: Run Tests with Gradle
+        run: ./gradlew test
 
       #Publish JavaDoc
       
