@@ -26,3 +26,11 @@ jobs:
       # Run our build using gradle
       - name: Build with Gradle
         run: ./gradlew build
+
+      # Publish JavaDoc
+      
+      - name: Publish Custom Javadoc
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
