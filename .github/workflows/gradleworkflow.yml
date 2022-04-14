@@ -29,9 +29,17 @@ jobs:
 
       # Publish JavaDoc
       
-      - name: Publish Custom Javadoc
-        uses: JamesIves/github-pages-deploy-action@v4.3.0
+#       - name: Publish Custom Javadoc
+#         uses: JamesIves/github-pages-deploy-action@v4.3.0
+#         with:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           branch: gh-pages # The branch the action should deploy to.
+#           folder: docs # The folder the action should deploy.
+
+      - name: Deploy JavaDoc 🚀
+        uses: MathieuSoysal/Javadoc-publisher.yml@v2.0.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: docs # The folder the action should deploy.
+          javadoc-branch: javadoc
+          java-version: 17
+          target-folder: javadoc 
