@@ -28,6 +28,10 @@ jobs:
       
       - name: Build with Gradle
         run: ./gradlew clean build
+      
+      # Run tests
+      - name: Test
+        run: ./gradlew clean test
 
       #Publish JavaDoc
       
