@@ -26,35 +26,7 @@
 #       - say-hello
 
 version: 2.1
-orbs:
-  slack: circleci/slack@4.9.3
-jobs:
-  notify:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets
+
           
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
@@ -85,3 +57,32 @@ workflows:
     jobs: # and here we list the jobs we are going to run.
       - one
       - two
+orbs:
+  slack: circleci/slack@4.9.3
+jobs:
+  notify:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+workflows:
+  send-notification:
+    jobs:
+      - notify:
+          context: slack-secrets
