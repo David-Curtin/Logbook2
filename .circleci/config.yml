@@ -75,16 +75,13 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
           event: always
 # Under the workflows: map, we can coordinate our two jobs, defined above.
 workflows:
+  send-notification:
+    jobs:
+      - notify:
+          context: slack-secrets
   version: 2.1
   one_and_two: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - one
       - two
       - three
-
-
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets
