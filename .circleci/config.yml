@@ -73,4 +73,5 @@ workflows:
               only:
                 - main
     jobs:
-      - coverage
+      - one
+      - two
