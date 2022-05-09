@@ -47,8 +47,6 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - checkout
       - run: echo "A more familiar hi" # We run a similar echo command to above.
       - run: sleep 15 # and then sleep for 15 seconds.
-      - slack/notify:
-          event: pass
 
 # workflows:
 #   version: 2
