@@ -23,6 +23,19 @@
 version: 2
 orbs:
 slack: circleci/slack@4.9.3
+
+commands:
+  notify_slack_error:
+    steps:
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+
+  notify_slack_pass:
+    steps:
+      - slack/notify:
+          event: pass
+          template: basic_success_1
           
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
@@ -34,9 +47,12 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
     # Steps are a list of commands to run inside the docker container above.
     parallelism: 2
     steps:
+      - trigger_slack_notification
       - checkout # this pulls code down from GitHub
       - run: echo "A first hello" # This prints "A first hello" to stdout.
       - run: sleep 25 # a command telling the job to "sleep" for 25 seconds.
+      - notify_slack_error
+      - notify_slack_pass
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: cimg/ruby:3.0.2
@@ -47,10 +63,6 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - checkout
       - run: echo "A more familiar hi" # We run a similar echo command to above.
       - run: sleep 15 # and then sleep for 15 seconds.
-      - run:
-          name: slack
-          command:
-                    curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
 
 # workflows:
 #   version: 2
