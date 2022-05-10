@@ -20,7 +20,7 @@
 #     jobs:
 #       - say-hello
 
-version: 2
+version: 2.1
 orbs:
   slack: circleci/slack@4.3.0
 
