@@ -21,22 +21,7 @@
 #       - say-hello
 
 version: 2
-orbs:
-  slack: circleci/slack@4.3.0
-  jobs:
-    commmands:
-      notify_slack_error:
-        steps:
-          - slack/notify:
-              event: fail
-              template: basic_fail_1
 
-      notify_slack_pass:
-        steps:
-          - slack/notify:
-              event: pass
-              template: basic_success_1
-       
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!          
   one: # This is our first job.
     docker: # it uses the docker executor
@@ -50,8 +35,6 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
       - checkout # this pulls code down from GitHub
       - run: echo "A first hello" # This prints "A first hello" to stdout.
       - run: sleep 25 # a command telling the job to "sleep" for 25 seconds.
-      - notify_slack_error
-      - notify_slack_pass
   two: # This is our second job.
     docker: # it runs inside a docker image, the same as above.
       - image: cimg/ruby:3.0.2
