@@ -47,7 +47,6 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
     # Steps are a list of commands to run inside the docker container above.
     parallelism: 2
     steps:
-      - trigger_slack_notification
       - checkout # this pulls code down from GitHub
       - run: echo "A first hello" # This prints "A first hello" to stdout.
       - run: sleep 25 # a command telling the job to "sleep" for 25 seconds.
