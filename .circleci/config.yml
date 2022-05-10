@@ -20,11 +20,11 @@
 #     jobs:
 #       - say-hello
 
-version: 2.1
+version: 2
 orbs:
   slack: circleci/slack@4.3.0
-
-jobs:
+       
+jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   notify_slack_error:
     steps:
       - slack/notify:
@@ -37,7 +37,6 @@ jobs:
           event: pass
           template: basic_success_1
           
-jobs: # we now have TWO jobs, so that a workflow can coordinate them!
   one: # This is our first job.
     docker: # it uses the docker executor
       - image: cimg/ruby:2.6.8 # specifically, a docker image with ruby 2.6.8
