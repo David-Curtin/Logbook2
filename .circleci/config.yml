@@ -115,8 +115,7 @@ workflows:
     jobs:
       - one
       - two
-      - build
-      - notify:
+      - build:
           context: slack-secrets
 #   send-notification:
 #     jobs:
