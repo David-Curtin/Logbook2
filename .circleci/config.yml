@@ -77,7 +77,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
             command: |
               cd src/test/java/com/lyit/csd/tests/unit
               cd ../../..
-              ./gradlew test
+              ./gradle test
         - save_cache:
             paths:
               - ~/.gradle/wrapper
