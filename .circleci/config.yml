@@ -20,6 +20,35 @@
 
 version: 2.1
 
+orbs: 
+  slack: circleci/slack@4.10.1
+jobs:
+  notify:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
+workflows:
+  send-notification:
+    jobs:
+      - notify:
+          context: slack-secrets  
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!          
   one: # This is our first job.
     docker: # it uses the docker executor
@@ -95,23 +124,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
         - store_artifacts:
             path: build/libs
         # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples      
-  - slack/notify:
-    event: always
-    custom: |
-      {
-        "blocks": [
-          {
-            "type": "section",
-            "fields": [
-              {
-                "type": "plain_text",
-                "text": "*This is a text notification*",
-                "emoji": true
-              }
-            ]
-          }
-        ]
-      }
+
 workflows:
   version: 2.1
   commit:
