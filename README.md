@@ -3,8 +3,7 @@
 | Branch | Build |
 |--- | --- |
 | main | ![CI-Build](https://github.com/LYITComputing/contemporary-software-development-ca2-2021-22-team-project-team-3/workflows/CI-Build/badge.svg?branch=main) |
-
-Starter code for the Contemporary Software Development CA2
+CircleCI | [![CircleCI](https://circleci.com/gh/David-Curtin/Logbook2/tree/main.svg?style=svg)](https://circleci.com/gh/David-Curtin/Logbook2/tree/main) |
 
 ## Table of Contents
 
