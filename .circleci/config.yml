@@ -20,7 +20,7 @@
 
 version: 2.1
 orbs:
-  slack: circleci/slack@4.1
+  slack: circleci/slack@4.10.1
 jobs: # we now have TWO jobs, so that a workflow can coordinate them!          
   one: # This is our first job.
     docker: # it uses the docker executor
@@ -99,7 +99,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
         - slack/notify:
             channel: 'CHANNEL'
             event: always
-            template: basic_fail_1
+            template: basic_success_1
 
 workflows:
   version: 2.1
