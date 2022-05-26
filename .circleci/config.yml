@@ -74,7 +74,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
         - run:
             name: Run tests in parallel # See: https://circleci.com/docs/2.0/parallelism-faster-jobs/
             # Use "./gradlew test" instead if tests are not run in parallel
-            command: 
+            command: |
               chmod +x gradlew
               cd src/test/java/com/lyit/csd/tests/unit
               cd ../../../../../../../../
