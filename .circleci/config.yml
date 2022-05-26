@@ -19,37 +19,9 @@
 #       - say-hello
 
 version: 2.1
-
-orbs: 
-  slack: circleci/slack@4.10.1
-jobs:
-  notify:
-    docker:
-      - image: 'cimg/base:stable'
-    steps:
-      - slack/notify:
-          custom: |
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "plain_text",
-                      "text": "*This is a text notification*",
-                      "emoji": true
-                    }
-                  ]
-                }
-              ]
-            }
-          event: always
-workflows:
-  send-notification:
-    jobs:
-      - notify:
-          context: slack-secrets  
- # we now have TWO jobs, so that a workflow can coordinate them!          
+orbs:
+  slack: circleci/slack@4.1
+jobs: # we now have TWO jobs, so that a workflow can coordinate them!          
   one: # This is our first job.
     docker: # it uses the docker executor
       - image: cimg/ruby:2.6.8 # specifically, a docker image with ruby 2.6.8
