@@ -108,7 +108,7 @@ workflows:
       - one
       - two
       - build
-        context: slack-secrets
+          context: slack-secrets
   nightly:
     triggers:
       - schedule:
