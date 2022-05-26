@@ -105,7 +105,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 #       - image: 'cimg/base:stable'
 #     steps:
 #       - slack/notify:
-#             channel: 'CHANNEL'
+#             channel: $SLACK_DEFAULT_CHANNEL
 #             event: always
 #             template: basic_success_1
 workflows:
