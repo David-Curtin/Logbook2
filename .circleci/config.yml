@@ -99,14 +99,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
         - slack/notify:
              event: always
              template: basic_success_1
-        
-#   notify:
-#     docker:
-#       - image: 'cimg/base:stable'
-#     steps:
-#       - slack/notify:
-#             event: always
-#             template: basic_success_1
+
 workflows:
   version: 2.1
   commit:
@@ -117,8 +110,16 @@ workflows:
               only:
                 - main
       - two
+          filters:
+            branches:
+              only:
+                - main
       - build:
           context: slack-secrets
+          filters:
+            branches:
+              only:
+                - main
 
   nightly:
     triggers:
