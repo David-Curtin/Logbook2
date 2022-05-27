@@ -97,23 +97,23 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
             path: build/libs
         # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples 
         - slack/notify:
-#              template: basic_success_1
-               custom: |
+#           template: basic_success_1
+            custom: |
+                       {
+                         "blocks": [
                            {
-                             "blocks": [
+                             "type": "section",
+                             "fields": [
                                {
-                                 "type": "section",
-                                 "fields": [
-                                   {
-                                     "type": "plain_text",
-                                     "text": "*This is a text notification*",
-                                     "emoji": true
-                                   }
-                                 ]
+                                 "type": "plain_text",
+                                 "text": "*This is a text notification*",
+                                 "emoji": true
                                }
                              ]
                            }
-                event: success 
+                         ]
+                       }
+            event: success 
 
 workflows:
   version: 2.1
