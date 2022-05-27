@@ -110,12 +110,12 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 workflows:
   version: 2.1
     jobs:
-      - one
+      - one:
           filters:
             branches:
               only:
                 - main
-      - two
+      - two:
           filters:
             branches:
               only:
