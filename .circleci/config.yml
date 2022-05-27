@@ -131,36 +131,36 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
                        }
             event: fail
 
-workflows:
-  version: 2.1
-  commit:
-    jobs:
-      - one:
-          filters:
-            branches:
-              only:
-                - main
-      - two:
-          filters:
-            branches:
-              only:
-                - main
-      - build:
-          context: slack-secrets
-          filters:
-            branches:
-              only:
-                - main
-
-#   nightly:
-#     triggers:
-#       - schedule:
-#           cron: "0 17 * * *"
+# workflows:
+#   version: 2.1
+#   commit:
+#     jobs:
+#       - one:
 #           filters:
 #             branches:
 #               only:
 #                 - main
-#     jobs:
-#       - one
-#       - two
-#       - build
+#       - two:
+#           filters:
+#             branches:
+#               only:
+#                 - main
+#       - build:
+#           context: slack-secrets
+#           filters:
+#             branches:
+#               only:
+#                 - main
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 17 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - one
+      - two
+      - build
