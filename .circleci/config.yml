@@ -114,7 +114,7 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
                        }
             event: pass
         - slack/notify:
-           custom: |
+            custom: |
                        {
                          "blocks": [
                            {
