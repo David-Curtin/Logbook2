@@ -152,15 +152,15 @@ workflows:
               only:
                 - main
 
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 17 * * *"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - one
-      - two
-      - build
+#   nightly:
+#     triggers:
+#       - schedule:
+#           cron: "0 17 * * *"
+#           filters:
+#             branches:
+#               only:
+#                 - main
+#     jobs:
+#       - one
+#       - two
+#       - build
