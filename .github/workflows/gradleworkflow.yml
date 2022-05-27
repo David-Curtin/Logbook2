@@ -1,7 +1,7 @@
 name: CI with Java and Gradle
 
 on:
-  push:
+#   push:
   workflow_dispatch:
 
 jobs:
