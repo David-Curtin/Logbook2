@@ -109,8 +109,13 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 #             template: basic_success_1
 workflows:
   version: 2.1
+  commit:
     jobs:
-      - one  
+      - one:
+          filters:
+            branches:
+              only:
+                - main
       - two
       - build:
           context: slack-secrets
