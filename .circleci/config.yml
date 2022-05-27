@@ -114,10 +114,6 @@ workflows:
       - two:
       - build:
           context: slack-secrets
-          filters:
-            branches:
-              only:
-                - main
 
   nightly:
     triggers:
