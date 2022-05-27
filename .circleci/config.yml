@@ -110,10 +110,8 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
 workflows:
   version: 2.1
   commit:
-     filters:
-      branches:
-        only:
-          - main
+    branches:
+      [main ]
     jobs:
       - one
       - two
