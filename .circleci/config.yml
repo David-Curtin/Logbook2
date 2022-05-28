@@ -69,8 +69,8 @@ jobs: # we now have TWO jobs, so that a workflow can coordinate them!
             name: 
             command: |
               chmod +x gradlew
-              cd src/test/java/com/lyit/csd/tests/unit
-              cd ../../../../../../../../
+ #             cd src/test/java/com/lyit/csd/tests/unit
+  #            cd ../../../../../../../../
               ./gradlew test
         - save_cache:
             paths:
